@@ -1,0 +1,28 @@
+<br><br><br>
+<div class="form-group">
+    <form >
+        <input type="text" placeholder="search users"[(ngModel)]="username"name="username" (keyup)="findProfile()" class="form-control" >
+    </form>
+   
+</div>
+<br><br><br>
+
+
+<div class="card" style="width: 18rem;" *ngIf = "collection" >
+    <img class="card-img-top" src="{{collection.avatar_url}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{collection.name | awesome }}</h5>
+      <p appColorDirective class="card-text">{{collection.bio}}.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li appColorDirective class="list-group-item">following:{{collection.following}}</li>
+      <li class="list-group-item">Email:{{collection.email}}</li>
+      <li class="list-group-item">contact:{{collection.hireable}}</li>
+      <li class="list-group-item">Works for:{{collection.company}}</li>
+    </ul>
+    <div class="card-body">
+        <a href="{{collection.html_url}}" class="btn btn-primary">Repository</a>
+    </div>
+  </div>
+
+

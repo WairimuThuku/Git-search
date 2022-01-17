@@ -1,0 +1,26 @@
+<br><br><br>
+<div class="form-group">
+    <form >
+        <input type="text" placeholder="search users Repositories"[(ngModel)]="username"name="username" (keyup)="getRepo()" class="form-control" >
+    </form>
+  
+</div>
+<br><br><br>
+
+
+
+<div class="card text-center" *ngFor="let repo of repos">
+    
+    <div class="card-body">
+      <h5 class="card-title">{{repo.name}}}</h5>
+      <p class="card-text">{{repo.description}}.</p>
+      <a href="{{repo.html_url}}" class="btn btn-primary">View project on github</a>
+    </div>
+    <div class="card-footer text-muted">
+      <p>Created at:{{repo.created_at}}</p>
+    </div>
+  </div>
+
+
+
+ 
